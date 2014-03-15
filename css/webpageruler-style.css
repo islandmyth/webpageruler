@@ -1,0 +1,35 @@
+#wpr-measure div { 
+	box-sizing: content-box; 
+	-moz-box-sizing:  content-box;
+	}
+#wpr-ruler {
+	position: absolute;
+	min-width:50px; 
+	background-image: url(../img/ruler-top.gif), url(../img/ruler-left.gif);
+	background-repeat: repeat-x, repeat-y;
+	background-position: top left;
+	background-color: rgba(134, 194, 255, 0.4); 
+	border: 1px solid rgba(0,0,0,0.75);
+	min-height:50px;
+	top: 0; 
+	left: 0;
+	cursor: pointer;
+	z-index: 9999999;
+}
+#wpr-ruler #wpr-ruler-resizer {
+	width: 20px;
+	height: 20px;
+	background: #DADADA;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#wpr-size-details {
+	position: absolute;
+	background-color: #ECE9D8;
+	font-size: 11px;
+	padding: 3px 5px;
+	border: 1px solid #ACA899;
+}
+#wpr-size-details span { font-weight: bold;}
