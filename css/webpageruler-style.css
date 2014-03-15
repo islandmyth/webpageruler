@@ -1,6 +1,7 @@
 #wpr-measure div { 
 	box-sizing: content-box; 
 	-moz-box-sizing:  content-box;
+	font-family: arial,helvetica, sans-serif;
 	}
 #wpr-ruler {
 	position: absolute;

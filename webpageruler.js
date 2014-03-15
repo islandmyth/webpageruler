@@ -1,6 +1,9 @@
 webpageRuler = {
 	version: '0.0.1',
     attach: function(ruler,minh,minw){
+    	
+    	//webpageRuler.init();
+    	
         var resizer=ruler.resizer=document.getElementById("wpr-ruler-resizer");
         ruler.elemDetails =  document.getElementById('wpr-size-details');
         ruler.elemWidth = document.getElementById('wpr-wvalue');
@@ -98,6 +101,44 @@ webpageRuler = {
         return false;
         
         
+    },
+    init: function(){
+		var x = window._content;
+		var pageBody = x.document.getElementsByTagName("body")[0];  
+		  	
+		var isExists = x.document.getElementById("wpr-measure");
+		if(isExists == null) {
+			
+			var divWrapper = x.document.createElement("div");
+			divWrapper.setAttribute("id", "wpr-measure");
+			
+			var divRuler = x.document.createElement('div');
+			divRuler.setAttribute("id", "wpr-ruler");			
+			var divResizer = x.document.createElement('div');
+			divResizer.setAttribute("id", "wpr-ruler-resizer");
+
+
+			var divSize = x.document.createElement('div');
+			divSize.setAttribute('id', "wpr-size-details");
+
+			var spanHeight = x.document.createElement('span');
+			spanHeight.setAttribute("id", "wpr-wvalue");
+			
+			var spanWidth = x.document.createElement('span');
+			spanWidth.setAttribute("id", "wpr-hvalue");
+			
+			divSize.appendChild(spanWidth);
+			divSize.appendChild(spanHeight);
+
+			divRuler.appendChild(divResizer);
+			
+			divWrapper.appendChild(divRuler);
+			divWrapper.appendChild(divSize);
+			
+			pageBody.appendChild(divWrapper);
+			
+			
+		}
     },
     end: function(){
         document.onmouseup=null;
